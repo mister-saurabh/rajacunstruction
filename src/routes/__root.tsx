@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Navbar } from "../components/site/Navbar";
+import { Footer } from "../components/site/Footer";
+import { FloatingActions } from "../components/site/FloatingActions";
 
 function NotFoundComponent() {
   return (
@@ -77,19 +80,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Raja V.G. Home Design & VG Construction — Architect in Jaunpur" },
+      {
+        name: "description",
+        content:
+          "Premium home design, 2D planning, 3D elevation, structural design & construction consultancy in Jaunpur & Pratapgarh by Er. Rajaram Gupta, M.Tech Structure.",
+      },
+      { name: "author", content: "Er. Rajaram Gupta" },
+      { property: "og:title", content: "Raja V.G. Home Design & VG Construction" },
+      {
+        property: "og:description",
+        content: "From Dream to Design, From Design to Reality.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "Raja V.G. Home Design Services" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Raja V.G. Home Design Services & VG Construction",
+          founder: "Er. Rajaram Gupta",
+          telephone: ["+91-8736936268", "+91-8881678176"],
+          email: "raja123iit@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Usara Bazar, Badlapur",
+            addressLocality: "Jaunpur",
+            addressRegion: "Uttar Pradesh",
+            addressCountry: "IN",
+          },
+        }),
       },
     ],
   }),
@@ -118,8 +151,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <Navbar />
+      <main className="pt-16 md:pt-20">
+        <Outlet />
+      </main>
+      <Footer />
+      <FloatingActions />
     </QueryClientProvider>
   );
 }
