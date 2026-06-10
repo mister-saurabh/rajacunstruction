@@ -69,7 +69,9 @@ export function HeroSlider() {
       {slides.map((s, i) => (
         <video
           key={s.src}
-          ref={(el) => (videoRefs.current[i] = el)}
+          ref={(el) => {
+            videoRefs.current[i] = el;
+          }}
           src={s.src}
           poster={fallback}
           muted
