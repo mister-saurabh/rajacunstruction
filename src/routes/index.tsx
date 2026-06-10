@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Compass, Pencil, Layers, Building, HardHat, Trophy, Quote, Star } from "lucide-react";
-import heroVilla from "@/assets/hero-luxury.jpg";
-import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
+import { ArrowRight, CheckCircle2, Compass, Pencil, Layers, Building, HardHat, Trophy, Quote, Star, Calendar, Image as ImageIcon, Phone } from "lucide-react";
+import { HeroSlider } from "@/components/site/HeroSlider";
 import { projects } from "@/lib/projects";
 import { SectionHeader } from "@/components/site/SectionHeader";
 
@@ -56,74 +55,55 @@ const testimonials = [
 function Home() {
   return (
     <>
-      {/* HERO — cinematic video, typography focused */}
-      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-navy">
-        <video
-          src={heroVideo.url}
-          poster={heroVilla}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 size-full object-cover scale-105 motion-reduce:hidden"
-        />
-        <img
-          src={heroVilla}
-          alt="Luxury modern residence at blue hour"
-          className="absolute inset-0 size-full object-cover scale-105 hidden motion-reduce:block"
-          width={1920}
-          height={1280}
-        />
-        {/* Cinematic overlays */}
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.55)_100%)]" />
+      {/* HERO — cinematic video slider */}
+      <HeroSlider />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 text-center animate-fade-up">
-          <h1 className="font-display font-light text-white tracking-[-0.03em] leading-[0.95] text-[3rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]">
-            Architecture
-            <br />
-            <span className="italic font-extralight gold-text">for a life</span>
-            <br />
-            well lived.
-          </h1>
-          <div className="mx-auto mt-10 sm:mt-14 max-w-md flex items-center justify-center gap-4 text-[10px] sm:text-xs uppercase tracking-[0.45em] text-white/70 font-light">
-            <span className="h-px flex-1 bg-white/30" />
-            Design · Engineer · Build
-            <span className="h-px flex-1 bg-white/30" />
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-white/60 text-[10px] uppercase tracking-[0.3em]">
-          Scroll
-          <span className="h-10 w-px bg-gradient-to-b from-white/60 to-transparent animate-float-slow" />
-        </div>
-      </section>
-
-      {/* CTA STRIP — placed directly after hero */}
-      <section className="relative bg-navy-light/95 border-y border-white/5">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <p className="text-cream/85 text-sm sm:text-base font-light tracking-wide text-center sm:text-left max-w-xl">
-            Bespoke residential design & construction, crafted by qualified engineers in Jaunpur.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-gold text-navy hover:bg-gold-light px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all hover:-translate-y-0.5 shadow-gold"
-            >
-              Book Consultation <ArrowRight className="size-4" />
-            </Link>
-            <Link
-              to="/projects"
-              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white hover:bg-white hover:text-navy px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all"
-            >
-              View Projects
-            </Link>
+      {/* ACTION SECTION — directly below hero */}
+      <section className="relative bg-navy text-cream border-b border-white/5">
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_20%_50%,#D4A017,transparent_55%)]" />
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 py-10 sm:py-14">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="max-w-xl">
+              <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.35em] text-gold font-medium">
+                <span className="h-px w-6 bg-gold" /> Begin your project
+              </div>
+              <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-4xl font-light leading-tight">
+                Let's build something <span className="gold-text italic">extraordinary.</span>
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:min-w-[640px]">
+              <Link
+                to="/contact"
+                className="group flex items-center justify-between gap-3 bg-gold text-navy hover:bg-gold-light px-6 py-4 rounded-xl font-medium text-sm transition-all hover:-translate-y-0.5 shadow-gold"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Calendar className="size-4" /> Book Consultation
+                </span>
+                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/projects"
+                className="group flex items-center justify-between gap-3 bg-white/5 border border-white/15 text-white hover:bg-white hover:text-navy px-6 py-4 rounded-xl font-medium text-sm transition-all hover:-translate-y-0.5"
+              >
+                <span className="flex items-center gap-2.5">
+                  <ImageIcon className="size-4" /> View Projects
+                </span>
+                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/contact"
+                className="group flex items-center justify-between gap-3 bg-white/5 border border-white/15 text-white hover:bg-white hover:text-navy px-6 py-4 rounded-xl font-medium text-sm transition-all hover:-translate-y-0.5"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Phone className="size-4" /> Contact Us
+                </span>
+                <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* TRUST */}
       <section className="section-pad bg-cream">
