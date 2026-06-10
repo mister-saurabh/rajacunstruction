@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Compass, Pencil, Layers, Building, HardHat, Trophy, Quote, Star } from "lucide-react";
-import heroVilla from "@/assets/hero-villa.jpg";
+import heroVilla from "@/assets/hero-luxury.jpg";
 import { projects } from "@/lib/projects";
 import { SectionHeader } from "@/components/site/SectionHeader";
 
@@ -55,75 +55,53 @@ const testimonials = [
 function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+      {/* HERO — cinematic full-screen */}
+      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-navy">
         <img
           src={heroVilla}
-          alt="Luxury modern villa designed by Raja V.G."
-          className="absolute inset-0 size-full object-cover"
+          alt="Luxury modern residence at blue hour"
+          className="absolute inset-0 size-full object-cover scale-105"
           width={1920}
           height={1280}
+          fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/90 via-navy/70 to-navy/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+        {/* Cinematic overlay */}
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/80" />
 
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8 py-24 grid lg:grid-cols-12 gap-10 items-center w-full">
-          <div className="lg:col-span-8 text-cream animate-fade-up">
-            <div className="inline-flex items-center gap-2 glass-dark text-cream/90 px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.2em]">
-              <span className="size-1.5 rounded-full bg-gold" />
-              From Dream to Design, From Design to Reality
-            </div>
-            <h1 className="mt-6 font-display font-semibold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight">
-              Design Your Dream Home <br className="hidden md:block" />
-              With Expert <span className="gold-text">Engineers & Architects</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-cream/80 text-lg leading-relaxed">
-              2D Planning, 3D Elevation, Structural Design, Interior Design & Construction Consultancy — by Er. Rajaram Gupta, M.Tech Structure.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-gold text-navy hover:bg-gold-light px-7 py-3.5 rounded-full font-semibold shadow-gold transition-all hover:-translate-y-0.5"
-              >
-                Get Free Consultation <ArrowRight className="size-4" />
-              </Link>
-              <Link
-                to="/projects"
-                className="inline-flex items-center gap-2 glass-dark text-cream hover:bg-cream/10 px-7 py-3.5 rounded-full font-semibold transition-colors"
-              >
-                View Projects
-              </Link>
-            </div>
-
-            <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg">
-              {[
-                { v: "150+", l: "Projects Designed" },
-                { v: "12+", l: "Years Experience" },
-                { v: "100%", l: "Vastu Compliant" },
-              ].map((s) => (
-                <div key={s.l}>
-                  <div className="text-3xl md:text-4xl font-display font-bold text-gold">{s.v}</div>
-                  <div className="text-xs text-cream/70 mt-1">{s.l}</div>
-                </div>
-              ))}
-            </div>
+        <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-8 text-center animate-fade-up">
+          <div className="inline-flex items-center gap-3 text-[10px] sm:text-xs uppercase tracking-[0.4em] text-gold/90 font-medium">
+            <span className="h-px w-8 bg-gold/60" />
+            Raja V.G. · Est. Jaunpur
+            <span className="h-px w-8 bg-gold/60" />
           </div>
-
-          <div className="lg:col-span-4 hidden lg:block">
-            <div className="glass p-6 rounded-3xl shadow-elegant">
-              <div className="text-xs uppercase tracking-[0.18em] text-gold font-semibold">Founder</div>
-              <div className="mt-2 text-2xl font-display font-semibold text-navy">Er. Rajaram Gupta</div>
-              <div className="text-sm text-muted-foreground">Civil Engineer & Architect · M.Tech Structure</div>
-              <div className="mt-4 space-y-2.5">
-                {trustItems.slice(0, 4).map((t) => (
-                  <div key={t} className="flex items-start gap-2 text-sm text-navy/80">
-                    <CheckCircle2 className="size-4 text-gold mt-0.5 shrink-0" />
-                    {t}
-                  </div>
-                ))}
-              </div>
-            </div>
+          <h1 className="mt-7 sm:mt-9 font-display font-light text-white text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
+            Architecture for a <br className="hidden sm:block" />
+            <span className="italic font-extralight gold-text">life well lived.</span>
+          </h1>
+          <p className="mx-auto mt-7 sm:mt-8 max-w-xl text-white/75 text-base sm:text-lg leading-relaxed font-light">
+            Bespoke residential design and construction, crafted by qualified engineers.
+          </p>
+          <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-gold text-navy hover:bg-gold-light px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all hover:-translate-y-0.5 shadow-gold"
+            >
+              Book Consultation
+            </Link>
+            <Link
+              to="/projects"
+              className="inline-flex items-center justify-center gap-2 border border-white/30 text-white hover:bg-white hover:text-navy px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all"
+            >
+              View Projects
+            </Link>
           </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-white/50 text-[10px] uppercase tracking-[0.3em]">
+          Scroll
+          <span className="h-10 w-px bg-gradient-to-b from-white/50 to-transparent" />
         </div>
       </section>
 
