@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Compass, Pencil, Layers, Building, HardHat, Trophy, Quote, Star } from "lucide-react";
 import heroVilla from "@/assets/hero-luxury.jpg";
+import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 import { projects } from "@/lib/projects";
 import { SectionHeader } from "@/components/site/SectionHeader";
 
@@ -55,53 +56,72 @@ const testimonials = [
 function Home() {
   return (
     <>
-      {/* HERO — cinematic full-screen */}
+      {/* HERO — cinematic video, typography focused */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-navy">
+        <video
+          src={heroVideo.url}
+          poster={heroVilla}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 size-full object-cover scale-105 motion-reduce:hidden"
+        />
         <img
           src={heroVilla}
           alt="Luxury modern residence at blue hour"
-          className="absolute inset-0 size-full object-cover scale-105"
+          className="absolute inset-0 size-full object-cover scale-105 hidden motion-reduce:block"
           width={1920}
           height={1280}
-          fetchPriority="high"
         />
-        {/* Cinematic overlay */}
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/80" />
+        {/* Cinematic overlays */}
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.55)_100%)]" />
 
-        <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-8 text-center animate-fade-up">
-          <div className="inline-flex items-center gap-3 text-[10px] sm:text-xs uppercase tracking-[0.4em] text-gold/90 font-medium">
-            <span className="h-px w-8 bg-gold/60" />
-            Raja V.G. · Est. Jaunpur
-            <span className="h-px w-8 bg-gold/60" />
-          </div>
-          <h1 className="mt-7 sm:mt-9 font-display font-light text-white text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
-            Architecture for a <br className="hidden sm:block" />
-            <span className="italic font-extralight gold-text">life well lived.</span>
+        <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 text-center animate-fade-up">
+          <h1 className="font-display font-light text-white tracking-[-0.03em] leading-[0.95] text-[3rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]">
+            Architecture
+            <br />
+            <span className="italic font-extralight gold-text">for a life</span>
+            <br />
+            well lived.
           </h1>
-          <p className="mx-auto mt-7 sm:mt-8 max-w-xl text-white/75 text-base sm:text-lg leading-relaxed font-light">
-            Bespoke residential design and construction, crafted by qualified engineers.
-          </p>
-          <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-gold text-navy hover:bg-gold-light px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all hover:-translate-y-0.5 shadow-gold"
-            >
-              Book Consultation
-            </Link>
-            <Link
-              to="/projects"
-              className="inline-flex items-center justify-center gap-2 border border-white/30 text-white hover:bg-white hover:text-navy px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all"
-            >
-              View Projects
-            </Link>
+          <div className="mx-auto mt-10 sm:mt-14 max-w-md flex items-center justify-center gap-4 text-[10px] sm:text-xs uppercase tracking-[0.45em] text-white/70 font-light">
+            <span className="h-px flex-1 bg-white/30" />
+            Design · Engineer · Build
+            <span className="h-px flex-1 bg-white/30" />
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-white/50 text-[10px] uppercase tracking-[0.3em]">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2 text-white/60 text-[10px] uppercase tracking-[0.3em]">
           Scroll
-          <span className="h-10 w-px bg-gradient-to-b from-white/50 to-transparent" />
+          <span className="h-10 w-px bg-gradient-to-b from-white/60 to-transparent animate-float-slow" />
+        </div>
+      </section>
+
+      {/* CTA STRIP — placed directly after hero */}
+      <section className="relative bg-navy-light/95 border-y border-white/5">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-cream/85 text-sm sm:text-base font-light tracking-wide text-center sm:text-left max-w-xl">
+            Bespoke residential design & construction, crafted by qualified engineers in Jaunpur.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-gold text-navy hover:bg-gold-light px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all hover:-translate-y-0.5 shadow-gold"
+            >
+              Book Consultation <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              to="/projects"
+              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white hover:bg-white hover:text-navy px-7 py-3.5 rounded-full font-medium text-sm tracking-wide transition-all"
+            >
+              View Projects
+            </Link>
+          </div>
         </div>
       </section>
 
