@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Compass, Pencil, Layers, Building, HardHat, Trophy, Quote, Star } from "lucide-react";
 import heroVilla from "@/assets/hero-luxury.jpg";
+import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
 import { projects } from "@/lib/projects";
 import { SectionHeader } from "@/components/site/SectionHeader";
 
