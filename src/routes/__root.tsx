@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Premium home design, 2D planning, 3D elevation, structural design & construction consultancy in Jaunpur & Pratapgarh by Er. Rajaram Gupta, M.Tech Structure.",
       },
       { name: "author", content: "Er. Rajaram Gupta" },
-      { property: "og:title", content: "Raja V.G. Home Design & VG Construction" },
+      { property: "og:title", content: "Raja V.G. Home Design & VG Construction — Architect in Jaunpur" },
       {
         property: "og:description",
         content: "From Dream to Design, From Design to Reality.",
@@ -95,6 +95,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Raja V.G. Home Design Services" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Raja V.G. Home Design & VG Construction — Architect in Jaunpur" },
+      { name: "description", content: "Professional civil engineering, architectural design, house planning, 2D floor plans, 3D elevations, and construction consultancy services.Professional civil en" },
+      { property: "og:description", content: "Professional civil engineering, architectural design, house planning, 2D floor plans, 3D elevations, and construction consultancy services.Professional civil en" },
+      { name: "twitter:description", content: "Professional civil engineering, architectural design, house planning, 2D floor plans, 3D elevations, and construction consultancy services.Professional civil en" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ca8167aa-d06c-4d42-9ab5-6c45589b0bc3" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ca8167aa-d06c-4d42-9ab5-6c45589b0bc3" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
