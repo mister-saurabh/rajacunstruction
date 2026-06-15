@@ -1,6 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Home, PenTool, Box, Sofa, Layers, Wrench, Trees, HardHat, ClipboardCheck, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SectionHeader } from "@/components/site/SectionHeader";
+import svcHome from "@/assets/svc-home.jpg";
+import svcPlan from "@/assets/svc-plan.jpg";
+import svc3d from "@/assets/svc-3d.jpg";
+import svcInterior from "@/assets/svc-interior.jpg";
+import svcExterior from "@/assets/svc-exterior.jpg";
+import svcStructural from "@/assets/svc-structural.jpg";
+import svcLandscape from "@/assets/svc-landscape.jpg";
+import svcSupervision from "@/assets/svc-supervision.jpg";
+import svcConsultancy from "@/assets/svc-consultancy.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -17,55 +26,55 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    icon: Home,
+    image: svcHome,
     name: "Home Design",
     desc: "Custom residential planning tailored to your plot, family and budget — every drawing is unique.",
     points: ["Site analysis", "Vastu integration", "Custom floor planning"],
   },
   {
-    icon: PenTool,
+    image: svcPlan,
     name: "2D Planning",
     desc: "Detailed architectural floor plans with dimensions, furniture layouts and circulation diagrams.",
     points: ["Floor plans", "Working drawings", "Submission drawings"],
   },
   {
-    icon: Box,
+    image: svc3d,
     name: "3D Elevation",
     desc: "Photorealistic visualisation of your building exterior — see your home before construction starts.",
     points: ["Photorealistic renders", "Material studies", "Multiple options"],
   },
   {
-    icon: Sofa,
+    image: svcInterior,
     name: "Interior Design",
     desc: "Living room, bedroom, kitchen and office interiors — designed, sourced and executed.",
     points: ["Living & bedrooms", "Modular kitchens", "Office spaces"],
   },
   {
-    icon: Layers,
+    image: svcExterior,
     name: "Exterior Design",
     desc: "Modern facade design using contemporary materials, light, texture and proportion.",
     points: ["Facade studies", "Material selection", "Lighting design"],
   },
   {
-    icon: Wrench,
+    image: svcStructural,
     name: "Structural Design",
     desc: "Foundation, beam, column and slab design — earthquake-resistant and code-compliant.",
     points: ["Foundation design", "Beam & column design", "Earthquake resistance"],
   },
   {
-    icon: Trees,
+    image: svcLandscape,
     name: "Landscaping",
     desc: "Garden and outdoor planning to extend your home into nature.",
     points: ["Garden layout", "Outdoor furniture", "Plant selection"],
   },
   {
-    icon: HardHat,
+    image: svcSupervision,
     name: "Site Supervision",
     desc: "On-ground monitoring through every construction phase to ensure quality and timelines.",
     points: ["Weekly site visits", "Quality checks", "Contractor coordination"],
   },
   {
-    icon: ClipboardCheck,
+    image: svcConsultancy,
     name: "Consultancy Services",
     desc: "Technical guidance, second opinions and planning support for self-builders and contractors.",
     points: ["Plan review", "Material guidance", "Technical advisory"],
@@ -100,8 +109,15 @@ function Services() {
               >
                 <div className="absolute -top-16 -right-16 size-40 rounded-full bg-gold/5 group-hover:bg-gold/15 transition-colors" />
                 <div className="relative">
-                  <div className="size-14 rounded-2xl bg-navy text-gold grid place-items-center group-hover:rotate-6 transition-transform">
-                    <s.icon className="size-6" />
+                  <div className="size-14 rounded-2xl bg-navy grid place-items-center group-hover:rotate-6 transition-transform overflow-hidden ring-1 ring-gold/20">
+                    <img
+                      src={s.image}
+                      alt={s.name}
+                      width={56}
+                      height={56}
+                      loading="lazy"
+                      className="size-full object-cover"
+                    />
                   </div>
                   <h3 className="mt-5 text-xl font-semibold text-navy">{s.name}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>

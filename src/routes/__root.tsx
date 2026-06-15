@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "../components/site/Navbar";
 import { Footer } from "../components/site/Footer";
 import { FloatingActions } from "../components/site/FloatingActions";
+import { PageTransitionLoader } from "../components/site/PageTransitionLoader";
 
 function NotFoundComponent() {
   return (
@@ -163,6 +164,7 @@ function RootComponent() {
       </main>
       <Footer />
       <FloatingActions />
+      <PageTransitionLoader />
     </QueryClientProvider>
   );
 }
