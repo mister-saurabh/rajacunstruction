@@ -164,6 +164,7 @@ function RootComponent() {
       </main>
       <Footer />
       <FloatingActions />
+      <PageTransitionLoader />
     </QueryClientProvider>
   );
 }
