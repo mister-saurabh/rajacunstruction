@@ -109,14 +109,14 @@ function Services() {
               >
                 <div className="absolute -top-16 -right-16 size-40 rounded-full bg-gold/5 group-hover:bg-gold/15 transition-colors" />
                 <div className="relative">
-                  <div className="size-14 rounded-2xl bg-navy grid place-items-center group-hover:rotate-6 transition-transform overflow-hidden ring-1 ring-gold/20">
+                  <div className="size-20 rounded-2xl bg-cream grid place-items-center group-hover:-rotate-3 transition-transform overflow-hidden ring-1 ring-gold/30 shadow-sm">
                     <img
                       src={s.image}
                       alt={s.name}
-                      width={56}
-                      height={56}
+                      width={80}
+                      height={80}
                       loading="lazy"
-                      className="size-full object-cover"
+                      className="size-full object-contain p-2"
                     />
                   </div>
                   <h3 className="mt-5 text-xl font-semibold text-navy">{s.name}</h3>
