@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/rvg-logo.jpg.asset.json";
 
 const links = [
   { to: "/", label: "Home" },
@@ -28,13 +29,13 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="size-10 rounded-xl bg-navy grid place-items-center shadow-elegant group-hover:rotate-3 transition-transform">
-            <Building2 className="size-5 text-gold" />
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="size-11 rounded-xl overflow-hidden ring-1 ring-gold/40 shadow-elegant bg-navy group-hover:ring-gold transition-all">
+            <img src={logo.url} alt="Raja V.G. Home Design Service logo" className="size-full object-cover" />
           </div>
           <div className="leading-tight">
-            <div className="font-display font-semibold text-navy text-[15px]">Raja V.G.</div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">VG Construction</div>
+            <div className="font-display font-semibold text-navy text-[15px] tracking-wide">RAJA V.G.</div>
+            <div className="text-[9px] uppercase tracking-[0.22em] text-muted-foreground">Home Design Service</div>
           </div>
         </Link>
 

@@ -1,18 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import { Building2, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import logo from "@/assets/rvg-logo.jpg.asset.json";
 
 export function Footer() {
   return (
     <footer className="bg-navy text-cream/90 mt-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid gap-12 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5">
-            <div className="size-10 rounded-xl bg-gold/15 border border-gold/30 grid place-items-center">
-              <Building2 className="size-5 text-gold" />
+          <div className="flex items-center gap-3">
+            <div className="size-12 rounded-xl overflow-hidden ring-1 ring-gold/40">
+              <img src={logo.url} alt="Raja V.G. logo" className="size-full object-cover" />
             </div>
             <div>
-              <div className="font-display font-semibold text-cream">Raja V.G.</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-gold">VG Construction</div>
+              <div className="font-display font-semibold text-cream tracking-wide">RAJA V.G.</div>
+              <div className="text-[10px] uppercase tracking-[0.22em] text-gold">Home Design Service</div>
             </div>
           </div>
           <p className="mt-5 text-sm text-cream/70 leading-relaxed">

@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import founderImg from "@/assets/founder-real.jpg.asset.json";
+import founderImg from "@/assets/founder.jpg.asset.json";
 import teamImg from "@/assets/team-photo.jpg.asset.json";
 import siteVisitImg from "@/assets/site-visit.jpg.asset.json";
 import frame8 from "@/assets/project-frame-8.jpg.asset.json";
