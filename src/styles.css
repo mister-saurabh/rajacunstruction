@@ -142,6 +142,20 @@
   from { stroke-dashoffset: 200; opacity: 0; }
   to { stroke-dashoffset: 0; opacity: 1; }
 }
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes loader-spin-rev {
+  to { transform: rotate(-360deg); }
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(212,160,23,0.35); }
+  50% { transform: scale(1.04); box-shadow: 0 0 55px rgba(212,160,23,0.6); }
+}
+@keyframes shimmer {
+  0% { transform: translateX(-120%) skewX(-12deg); }
+  100% { transform: translateX(220%) skewX(-12deg); }
+}
 
 .animate-fade-up { animation: fade-up 0.7s ease-out both; }
 .animate-fade-in { animation: fade-in 0.8s ease-out both; }
@@ -153,4 +167,45 @@
   stroke-dashoffset: 200;
   opacity: 0;
   animation: loader-draw 0.6s ease-out forwards;
+}
+
+/* Luxury project card */
+.lux-card {
+  position: relative;
+  isolation: isolate;
+}
+.lux-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(212,160,23,0.55), rgba(212,160,23,0) 40%, rgba(212,160,23,0) 60%, rgba(212,160,23,0.55));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.lux-card:hover::before { opacity: 1; }
+.lux-card .shimmer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+.lux-card .shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 35%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-120%) skewX(-12deg);
+}
+.lux-card:hover .shimmer::after {
+  animation: shimmer 1.4s ease-out forwards;
 }
