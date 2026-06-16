@@ -156,27 +156,42 @@ function Home2() {
               View All Projects <ArrowRight className="size-4" />
             </Link>
           </div>
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[260px] gap-5">
-            {featured.map((p) => (
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[280px] gap-6">
+            {featured.map((p, i) => (
               <article
                 key={p.title}
-                className={`group relative overflow-hidden rounded-2xl bg-navy ${p.span}`}
+                className={`lux-card group relative overflow-hidden rounded-[28px] bg-navy ring-1 ring-navy/10 shadow-elegant hover:shadow-gold transition-shadow duration-700 ${p.span}`}
               >
                 <img
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
-                  className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                  className="absolute inset-0 size-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.08]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="relative h-full min-h-[260px] flex flex-col justify-end p-6 text-white">
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold font-medium">
+                {/* Cinematic gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_10%,rgba(212,160,23,0.18),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                {/* Shimmer */}
+                <div className="shimmer" />
+
+                {/* Top corner index */}
+                <div className="absolute top-5 left-5 z-[3] flex items-center gap-2.5">
+                  <span className="text-[10px] uppercase tracking-[0.35em] text-gold/90 font-medium">
+                    0{i + 1}
+                  </span>
+                  <span className="h-px w-8 bg-gold/60" />
+                </div>
+
+                {/* Content */}
+                <div className="relative h-full min-h-[280px] flex flex-col justify-end p-7 sm:p-8 text-white z-[3]">
+                  <div className="text-[10px] uppercase tracking-[0.35em] text-gold font-medium">
                     {p.type} · {p.location}
                   </div>
-                  <h3 className="mt-2 font-display text-xl sm:text-2xl font-light leading-tight">
+                  <h3 className="mt-3 font-display text-2xl sm:text-[28px] font-light leading-[1.1] tracking-[-0.01em]">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-sm text-white/75 leading-relaxed max-w-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  <div className="mt-3 h-px w-10 bg-gold/60 group-hover:w-24 transition-all duration-500" />
+                  <p className="mt-3 text-sm text-white/80 leading-relaxed max-w-md opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700">
                     {p.desc}
                   </p>
                 </div>
