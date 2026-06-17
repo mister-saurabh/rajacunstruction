@@ -140,8 +140,8 @@ function Contact() {
                 <div className="mt-8 p-6 rounded-2xl bg-gold/10 border border-gold/30 flex items-start gap-3">
                   <CheckCircle2 className="size-6 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-navy">Thank you! Your message was sent.</p>
-                    <p className="text-sm text-navy/70 mt-1">We'll get back to you within 24 hours.</p>
+                    <p className="font-semibold text-navy">Thank you! Your request was sent to our team on WhatsApp.</p>
+                    <p className="text-sm text-navy/70 mt-1">If WhatsApp didn't open automatically, please call +91 87369 36268. We'll respond within 24 hours.</p>
                   </div>
                 </div>
               ) : (
