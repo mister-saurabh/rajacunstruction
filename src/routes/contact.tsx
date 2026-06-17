@@ -193,15 +193,24 @@ function Contact() {
       {/* MAP */}
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="rounded-3xl overflow-hidden border border-border shadow-elegant aspect-[16/8]">
+          <a
+            href="https://www.google.com/maps/place/Usra+bazar/@25.8786279,82.4427919,13.83z/data=!4m14!1m7!3m6!1s0x39906d0017bdf05b:0xe2afc656edd11dc9!2sUsra+bazar!8m2!3d25.8829665!4d82.4516203!16s%2Fg%2F11xvx7g4t3!3m5!1s0x39906d0017bdf05b:0xe2afc656edd11dc9!8m2!3d25.8829665!4d82.4516203!16s%2Fg%2F11xvx7g4t3?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-3xl overflow-hidden border border-border shadow-elegant aspect-[16/8] relative group"
+          >
             <iframe
-              title="Office location — Badlapur, Jaunpur"
-              src="https://www.google.com/maps?q=Badlapur,+Jaunpur,+Uttar+Pradesh&output=embed"
+              title="Office location — Usra Bazar, Badlapur, Jaunpur"
+              src="https://www.google.com/maps?q=25.8829665,82.4516203&output=embed"
               loading="lazy"
-              className="size-full border-0"
+              className="size-full border-0 pointer-events-none"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
+            <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/10 transition-colors" />
+            <div className="absolute bottom-4 right-4 bg-navy text-cream text-xs font-semibold px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
+              <MapPin className="size-3.5" /> Open in Google Maps
+            </div>
+          </a>
         </div>
       </section>
     </>
