@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Youtube, MessageCircle } from "lucide-react";
 import logo from "@/assets/rvg-logo.jpg.asset.json";
 
 export function Footer() {
