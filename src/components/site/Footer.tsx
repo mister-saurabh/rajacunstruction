@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Youtube, MessageCircle } from "lucide-react";
 import logo from "@/assets/rvg-logo.jpg.asset.json";
 
 export function Footer() {
@@ -20,11 +20,17 @@ export function Footer() {
             From Dream to Design, From Design to Reality. Your trusted partner in modern home design & construction.
           </p>
           <div className="flex gap-3 mt-5">
-            {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+            {[
+              { Icon: Instagram, href: "https://www.instagram.com/er.rajaramgupta/reels/", label: "Instagram" },
+              { Icon: Youtube, href: "https://www.youtube.com/@rajav.g748", label: "YouTube" },
+              { Icon: MessageCircle, href: "https://wa.me/918736936268", label: "WhatsApp" },
+            ].map(({ Icon, href, label }) => (
               <a
-                key={i}
-                href="#"
-                aria-label="social"
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
                 className="size-9 rounded-full border border-cream/15 grid place-items-center hover:bg-gold hover:text-navy hover:border-gold transition-colors"
               >
                 <Icon className="size-4" />

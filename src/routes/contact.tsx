@@ -31,7 +31,8 @@ function Contact() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries());
     const result = schema.safeParse(data);
     if (!result.success) {
@@ -43,8 +44,20 @@ function Contact() {
       return;
     }
     setErrors({});
+
+    const d = result.data;
+    const text =
+      `*New Consultation Request — Raja V.G.*\n\n` +
+      `*Name:* ${d.name}\n` +
+      `*Phone:* ${d.phone}\n` +
+      `*Email:* ${d.email}\n` +
+      `*Project Type:* ${d.projectType}\n\n` +
+      `*Message:*\n${d.message}`;
+    const waUrl = `https://wa.me/918736936268?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+
     setSubmitted(true);
-    e.currentTarget.reset();
+    form.reset();
   };
 
   const inputCls = "w-full px-4 py-3 rounded-xl bg-white border border-border focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 text-navy placeholder:text-muted-foreground/60 transition-colors";
@@ -127,8 +140,8 @@ function Contact() {
                 <div className="mt-8 p-6 rounded-2xl bg-gold/10 border border-gold/30 flex items-start gap-3">
                   <CheckCircle2 className="size-6 text-gold shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-navy">Thank you! Your message was sent.</p>
-                    <p className="text-sm text-navy/70 mt-1">We'll get back to you within 24 hours.</p>
+                    <p className="font-semibold text-navy">Thank you! Your request was sent to our team on WhatsApp.</p>
+                    <p className="text-sm text-navy/70 mt-1">If WhatsApp didn't open automatically, please call +91 87369 36268. We'll respond within 24 hours.</p>
                   </div>
                 </div>
               ) : (
