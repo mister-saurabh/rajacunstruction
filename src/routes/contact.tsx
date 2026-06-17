@@ -31,7 +31,8 @@ function Contact() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const data = Object.fromEntries(fd.entries());
     const result = schema.safeParse(data);
     if (!result.success) {
@@ -43,8 +44,20 @@ function Contact() {
       return;
     }
     setErrors({});
+
+    const d = result.data;
+    const text =
+      `*New Consultation Request — Raja V.G.*\n\n` +
+      `*Name:* ${d.name}\n` +
+      `*Phone:* ${d.phone}\n` +
+      `*Email:* ${d.email}\n` +
+      `*Project Type:* ${d.projectType}\n\n` +
+      `*Message:*\n${d.message}`;
+    const waUrl = `https://wa.me/918736936268?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+
     setSubmitted(true);
-    e.currentTarget.reset();
+    form.reset();
   };
 
   const inputCls = "w-full px-4 py-3 rounded-xl bg-white border border-border focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 text-navy placeholder:text-muted-foreground/60 transition-colors";
