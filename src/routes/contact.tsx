@@ -120,7 +120,7 @@ function Contact() {
               </div>
               <div className="mt-4 space-y-4 text-sm">
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-gold font-semibold">Main Office</div>
+                  <div className="text-xs uppercase tracking-wider text-gold font-semibold">Head Office</div>
                   <p className="mt-1 text-navy/80">Usara Bazar, Badlapur,<br />Jaunpur, Uttar Pradesh</p>
                 </div>
                 <div>

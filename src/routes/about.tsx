@@ -7,7 +7,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Er. Rajaram Gupta — Architect & Civil Engineer | Raja V.G." },
-      { name: "description", content: "Meet Er. Rajaram Gupta — Civil Engineer, Architect & M.Tech Structure. 12+ years designing modern, Vastu-compliant homes in Jaunpur & Pratapgarh." },
+      { name: "description", content: "Meet Er. Rajaram Gupta — Civil Engineer, Architect & M.Tech Structure. 7+ years designing modern, Vastu-compliant homes in Jaunpur & Pratapgarh." },
       { property: "og:title", content: "About Raja V.G. Home Design Services" },
       { property: "og:description", content: "Engineering-led architecture firm built on trust, expertise & beautiful homes." },
     ],
@@ -42,7 +42,7 @@ function About() {
             <SectionHeader
               align="left"
               eyebrow="Our Story"
-              title="Twelve years of crafting modern Indian homes"
+              title="Seven years of crafting modern Indian homes"
             />
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
@@ -55,7 +55,7 @@ function About() {
             <div className="mt-8 grid grid-cols-2 gap-4">
               {[
                 ["150+", "Homes Designed"],
-                ["12+", "Years Experience"],
+                ["7+", "Years Experience"],
                 ["50+", "Cities Served"],
                 ["100%", "Client Satisfaction"],
               ].map(([v, l]) => (
