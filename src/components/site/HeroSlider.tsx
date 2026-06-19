@@ -32,7 +32,7 @@ export function HeroSlider() {
   }, [active]);
 
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden bg-navy">
+    <section className="relative -mt-16 md:-mt-20 min-h-[100svh] w-full overflow-hidden bg-navy">
       {clips.map((src, i) => (
         <video
           key={src}
@@ -50,39 +50,37 @@ export function HeroSlider() {
       ))}
       <img src={poster.url} alt="" aria-hidden className="absolute inset-0 size-full object-cover -z-10" />
 
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-black/55" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/85" />
+      {/* Subtle bottom gradient for text legibility only */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 min-h-[100svh] flex flex-col justify-end pb-20 sm:pb-28 md:pb-32">
-        <div key={active} className="max-w-4xl animate-fade-up">
-          <div className="inline-flex items-center gap-3 text-[10px] sm:text-xs uppercase tracking-[0.4em] text-gold font-medium">
-            <span className="h-px w-8 bg-gold" />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 min-h-[100svh] flex flex-col justify-end pb-16 sm:pb-20 md:pb-24">
+        <div key={active} className="max-w-2xl animate-fade-up">
+          <div className="inline-flex items-center gap-3 text-[9px] sm:text-[10px] uppercase tracking-[0.35em] text-gold font-medium">
+            <span className="h-px w-6 bg-gold" />
             Raja V.G. · Architecture & Construction
           </div>
-          <h1 className="mt-5 font-display font-light text-white tracking-[-0.03em] leading-[0.98] text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <h1 className="mt-3 font-display font-light text-white tracking-[-0.02em] leading-[1.05] text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Transforming Ideas Into
             <br />
             <span className="italic font-extralight gold-text">Beautiful Homes.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-sm sm:text-base text-white/75 leading-relaxed">
-            Professional Home Design, 2D & 3D Planning, Interior & Exterior Design, Structure Design &
-            Site Consultation. Civil & architectural solutions designed around your vision.
+          <p className="mt-4 max-w-xl text-xs sm:text-sm text-white/75 leading-relaxed">
+            Professional home design, 2D & 3D planning, interior & exterior design, structural engineering & site supervision.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/projects"
-              className="group inline-flex items-center gap-2.5 bg-gold text-navy hover:bg-gold-light px-7 py-4 rounded-full font-medium text-sm transition-all hover:-translate-y-0.5 shadow-gold"
+              className="group inline-flex items-center gap-2 bg-gold text-navy hover:bg-gold-light px-5 py-2.5 rounded-full font-medium text-xs transition-all hover:-translate-y-0.5 shadow-gold"
             >
               View Projects
-              <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/25 text-white hover:bg-white hover:text-navy px-7 py-4 rounded-full font-medium text-sm transition-all hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/25 text-white hover:bg-white hover:text-navy px-5 py-2.5 rounded-full font-medium text-xs transition-all hover:-translate-y-0.5"
             >
-              <Calendar className="size-4" />
+              <Calendar className="size-3.5" />
               Book Site Visit
             </Link>
           </div>
@@ -90,13 +88,13 @@ export function HeroSlider() {
       </div>
 
       {/* Progress indicators */}
-      <div className="absolute bottom-6 right-6 sm:right-10 z-20 flex gap-2">
+      <div className="absolute bottom-5 right-5 sm:right-8 z-20 flex gap-2">
         {clips.map((_, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
             aria-label={`Clip ${i + 1}`}
-            className="relative h-[3px] w-10 sm:w-14 overflow-hidden rounded-full bg-white/25"
+            className="relative h-[2px] w-8 sm:w-12 overflow-hidden rounded-full bg-white/30"
           >
             {i === active && (
               <span key={active} className="absolute inset-y-0 left-0 bg-gold animate-hero-progress" />
@@ -107,3 +105,4 @@ export function HeroSlider() {
     </section>
   );
 }
+
