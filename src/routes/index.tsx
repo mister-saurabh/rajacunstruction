@@ -113,7 +113,7 @@ function Home2() {
                 <MapPin className="size-5 text-gold" />
               </div>
               <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-gold/80">Main Office</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-gold/80">Head Office</div>
                 <div className="mt-1 font-display text-lg sm:text-xl font-light">
                   Usra Bazar, Badlapur, <span className="gold-text italic">Jaunpur</span>
                 </div>
@@ -122,7 +122,7 @@ function Home2() {
             <div>
               <div className="text-[10px] uppercase tracking-[0.3em] text-gold/80">Serving Clients Across</div>
               <div className="mt-3 flex flex-wrap gap-2.5">
-                {["Madiyahu Market, Jaunpur", "Sultanpur Road, Pratapgarh", "Badlapur Region", "Jaunpur District"].map(
+                {["Madiyahu Market, Jaunpur", "Sultanpur Road, Dhakawa, Pratapgarh", "Jaunpur District"].map(
                   (loc) => (
                     <span
                       key={loc}
@@ -215,7 +215,7 @@ function Home2() {
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
               </div>
               <div className="absolute -bottom-6 -right-4 sm:-right-8 bg-gold text-navy px-6 py-5 rounded-2xl shadow-gold max-w-[220px]">
-                <div className="text-3xl font-display font-light leading-none">10+</div>
+                <div className="text-3xl font-display font-light leading-none">7+</div>
                 <div className="mt-1.5 text-xs uppercase tracking-[0.2em] font-medium">
                   Years of Engineering Practice
                 </div>
@@ -242,7 +242,7 @@ function Home2() {
                 </span>
               </div>
               <p className="mt-6 text-base text-navy/75 leading-relaxed">
-                A decade of hands-on civil engineering and architectural practice across Eastern UP. Every
+                7 years of hands-on civil engineering and architectural practice across Eastern UP. Every
                 project is personally led — from the first vastu-aligned sketch to the final structural
                 certificate — with an obsession for build quality and design clarity.
               </p>
@@ -254,7 +254,7 @@ function Home2() {
               <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-5 max-w-md">
                 {[
                   { n: "100+", l: "Homes Designed" },
-                  { n: "10+", l: "Years Practice" },
+                  { n: "7+", l: "Years Practice" },
                   { n: "3", l: "Districts Served" },
                 ].map((s) => (
                   <div key={s.l} className="border-l-2 border-gold pl-4">
